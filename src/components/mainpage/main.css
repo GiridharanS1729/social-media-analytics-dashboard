@@ -1,0 +1,40 @@
+/* mainpage */
+
+.MainPage {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.button-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    text-align: center;
+}
+
+.mbtn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    background-color: #db8b0a;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100px;
+}
+
+.mbtn:hover {
+    background-color: #d38405;
+}
+
+.mbtn.active {
+    background-color: #b46f00;
+    color: white;
+    border: 1px solid #4CAF50;
+}
