@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './App.css';  // Importing the CSS file
+import './App.css';
 
 function App() {
   const [username, setUsername] = useState('BCCI');
@@ -9,6 +9,7 @@ function App() {
 
   const fetchUserData = async () => {
     setStatusMessage('Fetching data...');
+    setData(null); // Reset data before fetching new data
     try {
       const response = await axios.post('http://localhost:5000/get_profile', { username });
       setData(response.data);
@@ -32,30 +33,30 @@ function App() {
       {statusMessage && <p className="status-message">{statusMessage}</p>}
 
       {data && (
-        <div className="user-stats">
-          <h2>User Stats</h2>
-          <p>Posts: {data.posts}</p>
-          <p>Followers: {data.followers}</p>
-          <p>Following: {data.following}</p>
-          <p>Joined Date: {data.joined_date}</p>
-
-          {data.posts_data && (
-            <div>
-              <h2>First 5 Posts Analytics</h2>
-              <div className="post-analytics">
-
-                {data.posts_data.map((post, index) => (
-                  <div className="post" key={index}>
-                    <h3>Post {index + 1}</h3>
-                    <p><strong>Likes:</strong> {post.likes}</p>
-                    <p><strong>Comments:</strong> {post.comments}</p>
-                    <p><strong>Reposts:</strong> {post.reposts}</p>
-                    <p><strong>Views:</strong> {post.views}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+        <div className="user-profile">
+          <img src={data.photo} alt="User Profile" className="profile-photo" />
+          <h2 className="user-name">{data.name}</h2>
+          <div className="user-stats">
+            <p><strong>Posts: {data.posts} |</strong></p>
+            <p><strong>Followers: {data.followers} |</strong></p>
+            <p><strong>Following {data.following} |</strong></p>
+            <p><strong>{data.joined_date} |</strong></p>
+          </div>
+          <div className="posts-section">
+            <h3>Recent Posts</h3>
+            {data.posts_data.length > 0 ? (
+              data.posts_data.map((post, index) => (
+                <div key={index} className="post-item">
+                  <p><strong>Likes:</strong> {post.likes}</p>
+                  <p><strong>Comments:</strong> {post.comments}</p>
+                  <p><strong>Reposts:</strong> {post.reposts}</p>
+                  <p><strong>Views:</strong> {post.views}</p>
+                </div>
+              ))
+            ) : (
+              <p>No posts available.</p>
+            )}
+          </div>
         </div>
       )}
     </div>
