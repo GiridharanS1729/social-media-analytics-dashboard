@@ -76,14 +76,14 @@ async function fetchProfileData(username) {
             const reposts = await post.$eval('[data-testid="retweet"] span', el => el.textContent).catch(() => '0');
             const views = await post.$eval('[data-testid="view"] span', el => el.textContent).catch(() => '0');
 
-            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second for each post fetch
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 1 second for each post fetch
             profileData.posts_data.push({ likes, comments, reposts, views });
         }
 
         console.log('Fetched posts data:', profileData.posts_data);
     } catch (error) {
         console.error('Error fetching profile data:', error);
-        profileData.error = 'Error fetching data. Please try again later.';
+        profileData.error = 'NetWork Slow. Please try again later.';
     }
 
     await browser.close();
