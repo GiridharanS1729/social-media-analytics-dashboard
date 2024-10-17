@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './App.css';  // Importing the CSS file
 
 function App() {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState('BCCI');
   const [data, setData] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
 
@@ -19,7 +20,7 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="app-container">
       <h1>Twitter Analytics Dashboard</h1>
       <input
         type="text"
@@ -28,28 +29,32 @@ function App() {
         onChange={(e) => setUsername(e.target.value)}
       />
       <button onClick={fetchUserData}>Fetch Data</button>
-      {statusMessage && <p>{statusMessage}</p>}
+      {statusMessage && <p className="status-message">{statusMessage}</p>}
+
       {data && (
-        <div>
+        <div className="user-stats">
           <h2>User Stats</h2>
           <p>Posts: {data.posts}</p>
           <p>Followers: {data.followers}</p>
           <p>Following: {data.following}</p>
           <p>Joined Date: {data.joined_date}</p>
 
-          <h2>First 5 Posts Engagement</h2>
-          {data.posts_data && data.posts_data.length > 0 ? (
-            data.posts_data.map((post, index) => (
-              <div key={index} style={{ border: '1px solid #ddd', padding: '10px', marginBottom: '10px' }}>
-                <h3>Post {index + 1}</h3>
-                <p>Likes: {post.likes}</p>
-                <p>Comments: {post.comments}</p>
-                <p>Reposts: {post.reposts}</p>
-                <p>Views: {post.views}</p>
+          {data.posts_data && (
+            <div>
+              <h2>First 5 Posts Analytics</h2>
+              <div className="post-analytics">
+
+                {data.posts_data.map((post, index) => (
+                  <div className="post" key={index}>
+                    <h3>Post {index + 1}</h3>
+                    <p><strong>Likes:</strong> {post.likes}</p>
+                    <p><strong>Comments:</strong> {post.comments}</p>
+                    <p><strong>Reposts:</strong> {post.reposts}</p>
+                    <p><strong>Views:</strong> {post.views}</p>
+                  </div>
+                ))}
               </div>
-            ))
-          ) : (
-            <p>No posts data available.</p>
+            </div>
           )}
         </div>
       )}

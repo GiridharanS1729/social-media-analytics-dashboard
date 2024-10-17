@@ -1,38 +1,108 @@
-.App {
+/* App.css */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
   text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #333;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 300px;
+  transition: all 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  padding: 12px 25px;
+  margin: 20px 0;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.status-message {
+  margin: 15px 0;
+  color: #333;
+  font-style: italic;
+}
+
+.user-stats {
+  margin-top: 30px;
+  text-align: left;
+  border-top: 2px solid #007bff;
+  padding-top: 20px;
+}
+
+.user-stats h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.post-analytics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.post {
+  background-color: #e9ecef;
+  padding: 15px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.post h3 {
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.post p {
+  margin: 5px 0;
+  color: #495057;
+}
+
+.post strong {
+  color: #007bff;
 }
