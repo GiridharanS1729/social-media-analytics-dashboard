@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer');
 
 const app = express();
 const PORT = 5000;
+const bravepath = 'C:\\Users\\Giri\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe';
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -30,7 +31,7 @@ app.listen(PORT, () => {
 async function fetchProfileData(username) {
     const browser = await puppeteer.launch({
         headless: false,
-        executablePath: 'C:\\Users\\Giri\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe',
+        executablePath: bravepath,
         args: [
             '--disable-blink-features=AutomationControlled',
             '--no-sandbox',
