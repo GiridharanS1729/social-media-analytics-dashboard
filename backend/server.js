@@ -11,7 +11,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/get_profile', async (req, res) => {
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+app.post('/get_profile', async (req, res) => {//for twitter
     const username = req.body.username;
     const profileData = await fetchProfileData(username);
 
@@ -24,11 +29,7 @@ app.post('/get_profile', async (req, res) => {
     res.json(profileData);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
-
-async function fetchProfileData(username) {
+async function fetchProfileData(username) {//for twitter
     const browser = await puppeteer.launch({
         headless: false,
         executablePath: bravepath,
