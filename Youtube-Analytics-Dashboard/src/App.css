@@ -1,0 +1,67 @@
+.app-container {
+  width: 90vw;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.grp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.input-field {
+  padding: 12px 20px;
+  border: 2px solid #4a90e2;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
+  margin-right: 10px;
+  width: 300px;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.fetch-button {
+  padding: 12px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.fetch-button:hover {
+  background-color: #007bff;
+  transform: translateY(-2px);
+}
+
+.fetch-button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+  .input-field {
+    width: 100%;
+  }
+
+  .fetch-button {
+    width: 100%;
+  }
+}
