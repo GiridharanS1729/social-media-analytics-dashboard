@@ -11,12 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
-
-app.post('/get_profile', async (req, res) => {//for twitter
+app.post('/get_profile', async (req, res) => {
     const username = req.body.username;
     const profileData = await fetchProfileData(username);
 
@@ -29,14 +24,10 @@ app.post('/get_profile', async (req, res) => {//for twitter
     res.json(profileData);
 });
 
-<<<<<<< HEAD
 
 
 
 async function fetchProfileData(username) {
-=======
-async function fetchProfileData(username) {//for twitter
->>>>>>> twitter
     const browser = await puppeteer.launch({
         headless: false,
         executablePath: bravepath,
@@ -84,18 +75,14 @@ async function fetchProfileData(username) {//for twitter
             const reposts = await post.$eval('[data-testid="retweet"] span', el => el.textContent).catch(() => '0');
             const views = await post.$eval('[data-testid="view"] span', el => el.textContent).catch(() => '0');
 
-            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 1 second for each post fetch
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second for each post fetch
             profileData.posts_data.push({ likes, comments, reposts, views });
         }
 
         console.log('Fetched posts data:', profileData.posts_data);
     } catch (error) {
         console.error('Error fetching profile data:', error);
-<<<<<<< HEAD
         profileData.error = 'Network slow. Please try again later.';
-=======
-        profileData.error = 'NetWork Slow. Please try again later.';
->>>>>>> twitter
     }
 
     await browser.close();
