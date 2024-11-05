@@ -24,9 +24,8 @@ app.post('/get_profile', async (req, res) => {
     res.json(profileData);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+
+
 
 async function fetchProfileData(username) {
     const browser = await puppeteer.launch({
@@ -83,9 +82,14 @@ async function fetchProfileData(username) {
         console.log('Fetched posts data:', profileData.posts_data);
     } catch (error) {
         console.error('Error fetching profile data:', error);
-        profileData.error = 'Error fetching data. Please try again later.';
+        profileData.error = 'Network slow. Please try again later.';
     }
 
     await browser.close();
     return profileData;
 }
+
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});

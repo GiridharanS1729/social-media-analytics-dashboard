@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  const [username, setUsername] = useState('BCCI');
+  const [username, setUsername] = useState('Cristiano');
   const [data, setData] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
 
@@ -15,7 +15,7 @@ function App() {
       setData(response.data);
       setStatusMessage('Data fetched successfully!');
     } catch (error) {
-      setStatusMessage('Error fetching data. Please check the username and try again.');
+      setStatusMessage('Network slow. Please try again later.');
       console.error('Error fetching data', error);
     }
   };
