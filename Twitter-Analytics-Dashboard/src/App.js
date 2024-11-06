@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import PostsChart from './PostsChart';
+
 
 function App() {
-  const [username, setUsername] = useState('Cristiano');
+  const [username, setUsername] = useState('rajinikanth');
   const [data, setData] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
 
@@ -41,26 +43,18 @@ function App() {
               <h3>{data.name}</h3>
             </div>
             <div className="profile-stats">
+              <p><strong>Posts:</strong> {data.posts}</p>
               <p><strong>Followers:</strong> {data.followers}</p>
               <p><strong>Following:</strong> {data.following}</p>
-              <p><strong>Posts:</strong> {data.posts}</p>
-              <p><strong> {data.joined_date}</strong></p>
-              {/* <p><strong>Bio:</strong> {data.bio}</p> */}
+              <p><strong>Joined Date:</strong> {data.joined_date}</p>
             </div>
           </div>
-          <h3>Recent Posts</h3>
+          <h3>Recent Tweets</h3>
           <div className="posts-section">
             {data.posts_data.length > 0 ? (
-              data.posts_data.map((post, index) => (
-                <div key={index} className="tweet-card">
-                  <p><strong>Likes:</strong> {post.likes}</p>
-                  <p><strong>Comments:</strong> {post.comments}</p>
-                  <p><strong>Reposts:</strong> {post.reposts}</p>
-                  {/* <p><strong>Views:</strong> {post.views}</p> */}
-                </div>
-              ))
+              <PostsChart postsData={data.posts_data} />
             ) : (
-              <p>No tweets available.</p>
+              <p>No posts available.</p>
             )}
           </div>
         </div>

@@ -104,9 +104,6 @@ button:hover {
 /* Tweets Section */
 .posts-section {
   margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 .tweet-card {
