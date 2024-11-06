@@ -22,39 +22,45 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Twitter Analytics Dashboard</h1>
+      <h1>Twitter Profile Engagement</h1>
       <input
         type="text"
         placeholder="Enter Twitter username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <button onClick={fetchUserData}>Fetch Data</button>
+      <button onClick={fetchUserData}>Fetch Profile</button>
       {statusMessage && <p className="status-message">{statusMessage}</p>}
 
       {data && (
-        <div className="user-profile">
-          <img src={data.photo} alt="User Profile" className="profile-photo" />
-          <h2 className="user-name">{data.name}</h2>
-          <div className="user-stats">
-            <p><strong>Posts: {data.posts} |</strong></p>
-            <p><strong>Followers: {data.followers} |</strong></p>
-            <p><strong>Following {data.following} |</strong></p>
-            <p><strong>{data.joined_date} |</strong></p>
+        <div className="profile-info">
+          <h2>Profile Information</h2>
+          <div className="profile-info-grid">
+            <div className="profile-photo-card">
+              <img src={data.photo} alt="User Profile" className="profile-photo" />
+              <h3>{data.name}</h3>
+            </div>
+            <div className="profile-stats">
+              <p><strong>Followers:</strong> {data.followers}</p>
+              <p><strong>Following:</strong> {data.following}</p>
+              <p><strong>Posts:</strong> {data.posts}</p>
+              <p><strong> {data.joined_date}</strong></p>
+              {/* <p><strong>Bio:</strong> {data.bio}</p> */}
+            </div>
           </div>
+          <h3>Recent Posts</h3>
           <div className="posts-section">
-            <h3>Recent Posts</h3>
             {data.posts_data.length > 0 ? (
               data.posts_data.map((post, index) => (
-                <div key={index} className="post-item">
+                <div key={index} className="tweet-card">
                   <p><strong>Likes:</strong> {post.likes}</p>
                   <p><strong>Comments:</strong> {post.comments}</p>
                   <p><strong>Reposts:</strong> {post.reposts}</p>
-                  <p><strong>Views:</strong> {post.views}</p>
+                  {/* <p><strong>Views:</strong> {post.views}</p> */}
                 </div>
               ))
             ) : (
-              <p>No posts available.</p>
+              <p>No tweets available.</p>
             )}
           </div>
         </div>

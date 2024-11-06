@@ -1,167 +1,124 @@
-/* Basic styling for the app container */
+/* Container styles */
 .app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f5f8fa;
-  color: #14171a;
+  width: 80%;
+  margin: auto;
+  text-align: center;
   font-family: Arial, sans-serif;
 }
 
-/* Styling for the status message */
-.status-message {
+/* Input and Button */
+input[type="text"] {
+  padding: 10px;
+  width: 50%;
   margin-top: 10px;
   font-size: 16px;
-  color: #657786;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-/* Styling for the user profile container */
-.user-profile {
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.status-message {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Profile Information */
+.profile-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.profile-info h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+/* Profile Info Grid */
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  align-items: center;
+  background-color: #f7f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Photo Card */
+.profile-photo-card {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Profile Stats */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.profile-stats-item {
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  border: 1px solid #e1e8ed;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the profile photo */
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  border: 2px solid #1da1f2;
-}
-
-/* Styling for the user name */
-.user-name {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-/* Styling for user stats */
-.user-stats {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.user-stats p {
-  font-size: 18px;
-  color: #657786;
+.profile-stats-item p {
+  font-size: 16px;
+  color: #333;
   margin: 5px 0;
-}
-
-/* Styling for posts section */
-.posts-section {
-  margin-top: 20px;
-  width: 100%;
-}
-
-.posts-section h3 {
-  font-size: 20px;
-  color: #1da1f2;
   text-align: center;
 }
 
-.post-item {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #e1e8ed;
-  border-radius: 5px;
-  background-color: #f0f4f7;
-}
-
-.post-item p {
-  margin: 5px 0;
-  font-size: 16px;
-  color: #14171a;
-}
-
-
-
-/* Container styling for the entire app */
-.app-container {
+/* Tweets Section */
+.posts-section {
+  margin-top: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  background: linear-gradient(135deg, #f7f7f7, #e3e3e3);
-  border: 2px solid #dcdcdc;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  max-width: 700px;
-  margin: 20px auto;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-/* Title styling */
-.app-container h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Styling for the input box */
-.app-container input[type="text"] {
-  width: 80%;
-  padding: 12px 15px;
-  font-size: 16px;
+.tweet-card {
+  padding: 15px;
+  background-color: #e8f5fd;
+  border-radius: 8px;
   margin: 10px 0;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Focused state of the input box */
-.app-container input[type="text"]:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
-}
-
-/* Styling for the button */
-.app-container button {
-  padding: 12px 20px;
-  background-color: #4a90e2;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Hover effect for the button */
-.app-container button:hover {
-  background-color: #357ABD;
-  transform: scale(1.05);
-}
-
-/* Active state of the button */
-.app-container button:active {
-  background-color: #285C8D;
-  transform: scale(0.98);
-}
-
-/* Status message styling */
-.status-message {
-  margin-top: 15px;
-  color: #333;
-  font-size: 1rem;
-  background: #f0f0f0;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.tweet-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 3px 0;
 }
