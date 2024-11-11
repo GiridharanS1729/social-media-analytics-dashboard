@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+  padding: 30px 30px; 
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #5d7be3;
+}
+
+.active {
+  font-weight: bold;
+  color: #5d7be3;
+}
+
+
+.profile-section {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5d7be3;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.profile-icon:hover {
+  background-color: #4f54d6;
+}
+
+
+.profile-card {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: left;
+  z-index: 1;
+}
+
+.profile-card p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.profile-card button {
+  width: 100%;
+  padding: 8px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-card button:hover {
+  background-color: #d43c3c;
+}
