@@ -19,7 +19,7 @@ const App = () => {
     <div>
       {!isAuthPage && <Navbar />}
       <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/youtube" element={<YouTube />} />
         <Route path="/twitter" element={<Twitter />} />
