@@ -14,8 +14,8 @@ function Navbar() {
     }, []);
 
     const user = {
-        name: "Kaviya",
-        email: "kaviya@gmail.com"
+        name: "Giridharan S",
+        email: "giridharans1729@gmail.com"
     };
 
     const toggleProfile = () => {
