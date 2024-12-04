@@ -1,8 +1,14 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';  // Add Link for navigation
 import '../styles/Dashboard.css';
 
 function Dashboard() {
+const value=1729;
+useEffect(() => {
+    localStorage.setItem('mee', value);
+  }, [value]);
+
     return (
         <div className="landing-page">
            
