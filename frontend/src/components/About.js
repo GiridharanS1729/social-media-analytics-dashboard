@@ -34,7 +34,7 @@ function About() {
       <section className="about-section">
         <h2>Contact Us</h2>
         <p>
-          Have questions or feedback? Reach out to us at <a href="mailto:kaviyas.22it@kongu.edu">kaviyas.22it@kongu.edu</a>.
+          Have questions or feedback? Reach out to us at <a href="mailto:giridharans1729@gmail.com">giridharans1729@gmail.com</a>.
         </p>
       </section>
     </div>
